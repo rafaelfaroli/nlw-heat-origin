@@ -22,29 +22,29 @@
           </span>
           <img src="images/foto.png" alt="Foto de Perfil" id="fotoperfil" />
         </div>
-        <h1>Rafael Faria</h1>
+        <h1 id="userName">Rafael Faria</h1>
         <a href="https://github.com/rafaelfaroli">
           <img src="images/github.png" alt="Logo GitHub" />
           rafaelfaroli
         </a>
         <p>An instructor focused on helping people start programming for web</p>
-        <ul>
-          <li>
+        <ul id="socialLinks2">
+          <li class="youtube">
             <a href="https://youtube.com" class="linkitem" target="_blank">
               <img src="images/youtube.svg" alt="Logo YouTube" />
             </a>
           </li>
-          <li>
+          <li class="instagram">
             <a href="https://instagram.com" class="linkitem" target="_blank">
               <img src="images/instagram.svg" alt="Logo Instagram" />
             </a>
           </li>
-          <li>
+          <li class="facebook">
             <a href="https://facebook.com" class="linkitem" target="_blank">
               <img src="images/facebook.svg" alt="Logo Facebook" />
             </a>
           </li>
-          <li>
+          <li class="twitter">
             <a href="https://twitter.com" class="linkitem" target="_blank">
               <img src="images/twitter.svg" alt="Twitter" />
             </a>
@@ -53,13 +53,44 @@
       </div>
     </main>
     <script>
-      var a = 1;
-      let b = 2;
-      b = 3;
-      const c = 1;
-      console.log('a: ' + a);
-      console.log('b: ' + b);
-      console.log('c: ' + c);
+      // Objetos
+      const LinksSocialMedia = {
+        github: 'rafaelfaroli',
+        youtube: 'rafaelfaroli',
+        facebook: 'rafaelfaroli',
+        twitter: 'rafaelfaroli',
+        instagram: 'rafaelfaroli'
+      }
+
+      function changeSocialMediaLinks() {
+        for (let li of socialLinks.children) {
+          // alert(li.children[0].href)
+          // const social = li.className
+          const social = li.getAttribute('class')
+          li.children[0].href =
+            `https://${social}.com/` + LinksSocialMedia[social]
+          alert(li.children[0].href)
+        }
+      }
+
+      // Variáveis
+      // let permite multiplas atribuições mas somente uma definição
+      // const permite somente uma atribuição/definição
+
+      // Laço de repetição
+      // function changeSocialMediaLinks() {
+      //   for (let i = 0; i <= 10; i++) {
+      //     alert(i)
+      //   }
+      // }
+
+      // Selecionar elementos na página
+
+      // function changeSocialMediaLinks() {
+      //   document.getElementsByClassName('linkitem')
+      //   document.getElementById('userName').textContent = 'Rafael'
+      //   userName.textContent = 'Marcelo' // O JS identifica que se trata de um ID
+      // }
     </script>
   </body>
 </html>
